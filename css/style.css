@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/* Noto Sans KR & Montserrat & Raleway */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  background: #141212;
+  color: #fff;
+  padding-bottom: 1000px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+header .inner {
+  padding: 30px 50px 0;
+}
+
+header .inner .logo {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+header .inner .logo span {
+  padding: 0 1px;
+}
+header .inner .logo span img {
+  width: 100%;
+}
+
+header .gnb {
+  text-align: center;
+}
+header .gnb .menuOpen {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  padding: 30px 0;
+  z-index: 10;
+  cursor: pointer;
+}
+header .gnb .menuOpen::before {
+  content: "";
+  width: 150px;
+  height: 5px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+header .gnb .menuOpen:hover::before {
+  width: 165px;
+}
+
+header .gnb .menuBox {
+  position: absolute;
+  width: 99%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1000%;
+  color: rbga(55, 55, 55, 0.4);
+  backdrop-filter: blur(30px);
+  border-radius: 5px;
+  padding: 100px 0 30px;
+  box-sizing: border-box;
+  transition: all 1.5s;
+}
+header .gnb .menuBox li {
+  overflow: hidden;
+}
+header .gnb .menuBox li a {
+  display: block;
+  font-size: 40px;
+  transform: translateY(-100px);
+  transition: all 0.6s;
+}
+header .gnb .menuBox.on {
+  top: 10px;
+  transition: all 0.4s;
+}
+header .gnb .menuBox.on li a {
+  transform: translateY(0);
+}
+header .gnb .menuBox.on li:nth-child(2) a {
+  transition-delay: 0.05s;
+}
+header .gnb .menuBox.on li:nth-child(3) a {
+  transition-delay: 0.1s;
+}
+header .gnb .menuBox.on li:nth-child(4) a {
+  transition-delay: 0.15s;
+}
+
+/* visual */
+.visual {
+  margin-bottom: 0;
+}
+
+/* grid-container 부모 요소 */
+.visual .inner {
+  display: grid;
+  height: 100vh;
+  padding: 25px 50px 25px;
+  box-sizing: border-box;
+  grid-template-rows: auto 1fr auto;
+}
+.visual .inner .mainText {
+  max-width: fit-content;
+  font-weight: normal;
+  font-size: 4rem;
+  margin-left: auto;
+  line-height: 0.9;
+  letter-spacing: -2px;
+}
+.visual .inner .mainText span {
+  display: block;
+  overflow: hidden;
+}
+.visual .inner .mainText span i {
+  display: block;
+  font-style: normal;
+}
+
+/* grid-item 자식 요소 */
+.visual .inner .subText {
+  font-weight: 400;
+  font-size: 1.25rem;
+  align-self: flex-end;
+  margin-bottom: 50px;
+}
+.visual .inner .subText span {
+  color: #585858;
+}
+
+.visual .logoWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.visual .logoWrap span {
+  width: 16%;
+}
+.visual .logoWrap span img {
+  width: 100%;
+}
+
+/* common */
+section {
+  margin-bottom: 150px;
+}
+.inner {
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+.box {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.btn {
+  font-size: 0.7rem;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  display: inline-block;
+  background: #fff;
+  color: #222;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+/* con1 */
+.con1 .box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 90px;
+  background-color: rgba(55, 55, 55, 0.4);
+  backdrop-filter: blur(100px);
+  padding: 60px;
+}
+.con1 .box .mainText {
+  font-size: 1.9rem;
+  grid-row-start: 2;
+}
+.con1 .box .subText {
+  max-width: 500px;
+  font-size: 1.25rem;
+  grid-column-start: 2;
+}
+.con1 .box .subText p {
+  margin-top: 14px;
+}
+
+.con1 .textAni {
+  position: relative;
+  margin-top: 14px;
+}
+.con1 .textAni:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  background: #e36840;
+  animation: opa linear 1.5s 0s infinite;
+}
+
+@keyframes opa {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.con1 .textAni ul {
+  display: grid;
+  max-width: 800px;
+}
+.con1 .textAni ul li {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  transform: translateX(30px);
+  opacity: 0;
+}
