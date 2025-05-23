@@ -93,4 +93,20 @@ window.onload = function () {
         0
       );
   });
+
+  // con1 textAni: text change animation
+  let textAniList = document.querySelectorAll(".con1 .textAni li");
+  let textAni = gsap.timeline({ repeat: -1 });
+
+  for (let i = 0; i < textAniList.length; i++) {
+    textAni.to(textAniList[i], 0.8, {
+      opacity: 1,
+      repeat: 1,
+      delay: 0,
+      x: 0,
+      yoyo: true,
+      ease: "power4.out",
+    });
+  }
+  textAni.play();
 };
