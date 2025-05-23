@@ -17,8 +17,8 @@ window.onload = function () {
         trigger: ".visual",
         start: "100% 100%",
         end: "100% 0%",
-        scrub: 1,
-        markers: true,
+        scrub: 1, // scroll 사용시에만 애니메이션이 진행될 수 있게 하는 속성
+        // markers: true,
       },
     })
 
@@ -52,4 +52,45 @@ window.onload = function () {
       { x: 50, y: 450, rotate: 20, ease: "none", duration: 5 },
       0
     );
+
+  // .mainTextBox .title i (common)
+  gsap.utils.toArray(".mainTextBox .title i").forEach((selector) => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: selector,
+          start: "100% 100%",
+          end: "100% 100%",
+          scrub: 1,
+          // markers: true,
+        },
+      })
+
+      .fromTo(
+        selector,
+        { overflow: "hidden", y: 150 },
+        { y: 0, ease: "none", duration: 5 },
+        0
+      );
+  });
+
+  // .subText p (common)
+  gsap.utils.toArray(".subText p").forEach((selector) => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: selector,
+          start: "100% 100%",
+          end: "100% 100%",
+          scrub: 1,
+          markers: true,
+        },
+      })
+      .fromTo(
+        selector,
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, ease: "none", duration: 5 },
+        0
+      );
+  });
 };
