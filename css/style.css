@@ -431,11 +431,11 @@ section {
   margin-right: 20px;
 }
 
-.con4 ul.listBox {
+.con4 .listBox {
   margin: 100px 0;
   perspective: 900px;
 }
-.con4 ul.listBox li.box {
+.con4 .listBox li.box {
   position: sticky;
   position: -webkit-sticky;
   top: 100px;
@@ -447,7 +447,7 @@ section {
   display: grid;
   grid-template-columns: 60% auto;
 }
-.con4 ul.listBox li.box h2 {
+.con4 .listBox li.box h2 {
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: -2px;
@@ -456,32 +456,32 @@ section {
   grid-column: 1/3;
   margin-bottom: 100px;
 }
-.con4 ul.listBox li.box h3 {
+.con4 .listBox li.box h3 {
   font-size: 15rem;
   font-weight: 800;
   line-height: 0.9;
   align-self: flex-end;
 }
 
-.con4 ul.listBox li.box .text {
+.con4 .listBox li.box .text {
   align-self: flex-end;
   line-height: 1.4;
 }
-.con4 ul.listBox li.box .text h4 {
+.con4 .listBox li.box .text h4 {
   line-height: 1.2;
   margin-bottom: 20px;
 }
-.con4 ul.listBox li.box .text p {
+.con4 .listBox li.box .text p {
   opacity: 0.5;
 }
 
-.con4 ul.listBox li.box.a h3 {
+.con4 .listBox li.box.a h3 {
   color: #ffb84f;
 }
-.con4 ul.listBox li.box.b h3 {
+.con4 .listBox li.box.b h3 {
   color: #90c3cd;
 }
-.con4 ul.listBox li.box.c h3 {
+.con4 .listBox li.box.c h3 {
   color: #47b172;
 }
 
