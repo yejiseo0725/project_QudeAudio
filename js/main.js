@@ -177,4 +177,30 @@ window.onload = function () {
       gsap.to(imgBox, { scale: 0, opacity: 0, duration: 0.3 });
     });
   }
+
+  // con5 hover img _ overflowY 방지
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".con5",
+      start: "0% 100%",
+      end: "100% 0%",
+      toggleClass: {
+        targets: ".wrap",
+        className: "on",
+      },
+    },
+  });
+
+  // footer
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "footer",
+        start: "0% 100%",
+        end: "100% 0%",
+        scrub: 1,
+        markers: true,
+      },
+    })
+    .to(".logoWrap", { top: "20%", ease: "none", duration: 5 }, 0);
 };

@@ -543,12 +543,18 @@ section {
   opacity: 0;
 }
 
+/* 이 구간에서만 img hover scroll 없애기 */
+.wrap.on {
+  overflow: hidden;
+}
+
 /* footer */
 footer {
   position: relative;
   overflow: hidden;
 }
 footer .inner {
+  position: relative;
   height: 100vh;
   padding: 75px 75px 25px;
   box-sizing: border-box;
@@ -638,7 +644,6 @@ footer .logoWrap {
   left: 0;
   top: -50%;
   width: 100%;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
 }
