@@ -152,7 +152,7 @@ window.onload = function () {
             delay: (t % 3) * 0.1,
           });
       },
-      markers: true,
+      // markers: true,
     });
   });
 
@@ -163,7 +163,7 @@ window.onload = function () {
 
   for (let i = 0; i < listBox.length; i++) {
     listBox[i].addEventListener("mouseover", () => {
-      img.src = `/images/img${i + 1}.webp`;
+      img.src = `/images/img${i}.webp`;
       gsap.set(imgBox, { scale: 0, opacity: 0, duration: 0.3 }),
         gsap.to(imgBox, { scale: 1, opacity: 1, duration: 0.3 });
     });
@@ -199,8 +199,31 @@ window.onload = function () {
         start: "0% 100%",
         end: "100% 0%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
     .to(".logoWrap", { top: "20%", ease: "none", duration: 5 }, 0);
+
+  // loading
+  let loading = document.querySelector(".loading");
+  let rotate = document.querySelectorAll(".rotate");
+  let opacity = document.querySelectorAll(".opacity");
+
+  setTimeout(() => loading.classList.add("scene1"), 0);
+  setTimeout(() => loading.classList.add("scene2"), 1500);
+  setTimeout(() => loading.classList.remove("scene1", "scene2"), 2500);
+  setTimeout(
+    () =>
+      rotate.forEach((rotate) => {
+        rotate.classList.add("on");
+      }),
+    2000
+  );
+  setTimeout(
+    () =>
+      opacity.forEach((opacity) => {
+        opacity.classList.add("on");
+      }),
+    2000
+  );
 };
